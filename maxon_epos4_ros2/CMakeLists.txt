@@ -14,7 +14,6 @@ find_package(sensor_msgs REQUIRED)
 find_package(canopen REQUIRED)
 find_package(lely_core_libraries REQUIRED)
 find_package(canopen_interfaces REQUIRED)
-find_package(maxon_epos4_ros2 REQUIRED)
 
 
 
