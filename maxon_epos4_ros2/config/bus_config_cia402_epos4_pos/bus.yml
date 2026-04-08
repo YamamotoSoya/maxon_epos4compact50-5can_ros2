@@ -5,6 +5,7 @@ master:
   node_id: 6
   driver: "ros2_canopen::MasterDriver"
   package: "canopen_master_driver"
+  namespace: "/master_ns"
   sync_period: 50000   # unit is us ; we slow down for test to 50ms
   boot_time: 10000   # ms ; over all boot time 
   boot_timeout: 1500   # ms ; boot time out 
@@ -66,12 +67,12 @@ defaults:
 nodes:
   cia402_device_1:
     node_id: 1
-    dcf: "maxon_epos4_0x6050.eds"
+    dcf: "maxon_epos4_0x1018.eds"
     reset_communication: true
-    namespace: "/"
-#  cia402_device_2:
-#    node_id: 2
-#    dcf: "maxon_epos4_0x6050.eds"
-#    reset_communication: true
-#    namespace: "/"
+    namespace: "/motor1"
+  cia402_device_2:
+    node_id: 2
+    dcf: "maxon_epos4_0x1018.eds"
+    reset_communication: true
+    namespace: "/motor2"
 

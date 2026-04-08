@@ -7,29 +7,29 @@
 FileName=ObjectDictionary.eds
 FileVersion=2
 FileRevision=0
-Description=Electronic Data Sheet for EPOS4 Module 24/1.5
+Description=Electronic Data Sheet for EPOS4 Module 50/5
 EDSVersion=4.0
 
-CreationTime=04:12PM
+CreationTime=04:09PM
 CreationDate=05-04-2021
 CreatedBy=mmc
 
-ModificationTime=04:12PM
+ModificationTime=04:09PM
 ModificationDate=05-04-2021
 ModifiedBy=mmc
 
 [Comments]
 Lines=4
 Line1=Software Version:    0x0170
-Line2=Hardware Version:    0x6050
+Line2=Hardware Version:    0x6150
 Line3=Application Number:  0x0000
 Line4=Application Version: 0x0000
 
 [DeviceInfo]
 VendorName=maxon motor ag
 VendorNumber=0x000000FB
-ProductName=EPOS4 Module 24/1.5
-ProductNumber=0x60500000
+ProductName=EPOS4 Module 50/5
+ProductNumber=0x61500000
 RevisionNumber=0x01700000
 
 OrderCode=000000
@@ -588,7 +588,7 @@ ParameterName=COB-ID used by RxPDO 2
 ObjectType=0x7
 DataType=0x7
 AccessType=rw
-DefaultValue=$NODEID+0x80000300   ; mk $NODEID+0x00000300
+DefaultValue=$NODEID+0x80000300
 PDOMapping=0
 ObjFlags=0
 
@@ -620,7 +620,7 @@ ParameterName=COB-ID used by RxPDO 3
 ObjectType=0x7
 DataType=0x7
 AccessType=rw
-DefaultValue=$NODEID+0x80000400    ; mk  $NODEID+0x00000400
+DefaultValue=$NODEID+0x80000400
 PDOMapping=0
 ObjFlags=0
 
@@ -652,7 +652,7 @@ ParameterName=COB-ID used by RxPDO 4
 ObjectType=0x7
 DataType=0x7
 AccessType=rw
-DefaultValue=$NODEID+0x80000500   ;  mk $NODEID+0x00000500
+DefaultValue=$NODEID+0x80000500
 PDOMapping=0
 ObjFlags=0
 
@@ -2098,7 +2098,7 @@ DataType=0x7
 AccessType=rw
 DefaultValue=8000
 LowLimit=8000
-HighLimit=28500
+HighLimit=55500
 PDOMapping=0
 ObjFlags=0
 
@@ -2107,7 +2107,7 @@ ParameterName=Power supply overvoltage limit
 ObjectType=0x7
 DataType=0x7
 AccessType=rw
-DefaultValue=32000
+DefaultValue=58000
 PDOMapping=0
 ObjFlags=0
 
@@ -2278,9 +2278,9 @@ ParameterName=Nominal current
 ObjectType=0x7
 DataType=0x7
 AccessType=rww
-DefaultValue=1500
+DefaultValue=5000
 LowLimit=0
-HighLimit=1500
+HighLimit=5000
 PDOMapping=1
 ObjFlags=0
 
@@ -2289,9 +2289,9 @@ ParameterName=Output current limit
 ObjectType=0x7
 DataType=0x7
 AccessType=rww
-DefaultValue=4500
+DefaultValue=15000
 LowLimit=0
-HighLimit=4500
+HighLimit=15000
 PDOMapping=1
 ObjFlags=0
 
@@ -3164,7 +3164,7 @@ DataType=0x6
 AccessType=rww
 DefaultValue=500
 LowLimit=0
-HighLimit=4500
+HighLimit=15000
 PDOMapping=1
 ObjFlags=0
 
@@ -3733,8 +3733,8 @@ ObjectType=0x7
 DataType=0x4
 AccessType=rw
 DefaultValue=0
-LowLimit=-4500
-HighLimit=4500
+LowLimit=-15000
+HighLimit=15000
 PDOMapping=0
 ObjFlags=0
 
@@ -3755,8 +3755,8 @@ ObjectType=0x7
 DataType=0x4
 AccessType=rw
 DefaultValue=0
-LowLimit=-4500
-HighLimit=4500
+LowLimit=-15000
+HighLimit=15000
 PDOMapping=0
 ObjFlags=0
 
@@ -4318,9 +4318,9 @@ ParameterName=Maximal temperature power stage
 ObjectType=0x7
 DataType=0x6
 AccessType=rw
-DefaultValue=1000
+DefaultValue=1050
 LowLimit=0
-HighLimit=1000
+HighLimit=1050
 PDOMapping=0
 ObjFlags=0
 
@@ -4497,7 +4497,7 @@ DataType=0x6
 AccessType=rw
 DefaultValue=0
 LowLimit=0
-HighLimit=1500
+HighLimit=5000
 PDOMapping=0
 ObjFlags=1
 
