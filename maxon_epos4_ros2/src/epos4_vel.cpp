@@ -23,24 +23,24 @@ public:
   {
 
     // Service clients
-    client_driver_init_ = this->create_client<std_srvs::srv::Trigger>("/cia402_device_1/init");
-    client_driver_halt_ = this->create_client<std_srvs::srv::Trigger>("/cia402_device_1/halt");
-    client_driver_recover_ = this->create_client<std_srvs::srv::Trigger>("/cia402_device_1/recover");
-    client_driver_shutdown_ = this->create_client<std_srvs::srv::Trigger>("/cia402_device_1/shutdown");
-    client_driver_enable_ = this->create_client<std_srvs::srv::Trigger>("/cia402_device_1/enable");
-    client_driver_disable_ = this->create_client<std_srvs::srv::Trigger>("/cia402_device_1/disable");
-    client_driver_vel_mode_ = this->create_client<std_srvs::srv::Trigger>("/cia402_device_1/velocity_mode");
-    client_driver_csv_mode_ = this->create_client<std_srvs::srv::Trigger>("/cia402_device_1/cyclic_velocity_mode");
+    client_driver_init_ = this->create_client<std_srvs::srv::Trigger>("/motor1/cia402_device_1/init");
+    client_driver_halt_ = this->create_client<std_srvs::srv::Trigger>("/motor1/cia402_device_1/halt");
+    client_driver_recover_ = this->create_client<std_srvs::srv::Trigger>("/motor1/cia402_device_1/recover");
+    client_driver_shutdown_ = this->create_client<std_srvs::srv::Trigger>("/motor1/cia402_device_1/shutdown");
+    client_driver_enable_ = this->create_client<std_srvs::srv::Trigger>("/motor1/cia402_device_1/enable");
+    client_driver_disable_ = this->create_client<std_srvs::srv::Trigger>("/motor1/cia402_device_1/disable");
+    client_driver_vel_mode_ = this->create_client<std_srvs::srv::Trigger>("/motor1/cia402_device_1/velocity_mode");
+    client_driver_csv_mode_ = this->create_client<std_srvs::srv::Trigger>("/motor1/cia402_device_1/cyclic_velocity_mode");
 
-    client_target_ = this->create_client<canopen_interfaces::srv::COTargetDouble>("/cia402_device_1/target");
+    client_target_ = this->create_client<canopen_interfaces::srv::COTargetDouble>("/motor1/cia402_device_1/target");
 
-    tpdo_publisher_ = this->create_publisher<canopen_interfaces::msg::COData>("/cia402_device_1/tpdo", 10);
+    tpdo_publisher_ = this->create_publisher<canopen_interfaces::msg::COData>("/motor1/cia402_device_1/tpdo", 10);
 
     sine_wave_timer_ = this->create_wall_timer(10ms, std::bind(&Epos4_Vel_Node::timer_callback, this));
     
     
     // Topic Subscriber
-    subscription_ = create_subscription<sensor_msgs::msg::JointState>("/cia402_device_1/joint_states", 10, 
+    subscription_ = create_subscription<sensor_msgs::msg::JointState>("/motor1/cia402_device_1/joint_states", 10, 
             std::bind(&Epos4_Vel_Node::jointStateCallback, this, std::placeholders::_1));
 
     // Start input thread
