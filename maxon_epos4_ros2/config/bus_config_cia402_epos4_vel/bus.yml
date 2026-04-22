@@ -16,10 +16,10 @@ defaults:
   boot_timeout_ms: 3000
   heartbeat_producer: 2000   # [ms] heartbeat producer for all slaves 
   #switching_state: 2
-  scale_pos_to_dev: 1.0    # for testing we work in EPOS4 units [qc]
-  scale_pos_from_dev: 1.0  # for testing we work in EPOS4 units [qc]
-  scale_vel_to_dev: 1.0    # for testing we work in EPOS4 units [rpm]
-  scale_vel_from_dev: 1.0  # for testing we work in EPOS4 units [rpm]
+  scale_pos_from_dev: 0.0015339   # = 2π / 4096
+  scale_vel_from_dev: 0.10472     # = 2π / 60
+  scale_pos_to_dev:   651.9       # = 4096 / 2π
+  scale_vel_to_dev:   9.5493      # = 60 / 2π
   sdo:
     - {index: 0x6040, sub_index: 0, value: 0x80} # Fault reset
     - {index: 0x6040, sub_index: 0, value: 0x06} # Fault reset
