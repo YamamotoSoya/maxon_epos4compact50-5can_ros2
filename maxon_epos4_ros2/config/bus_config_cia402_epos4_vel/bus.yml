@@ -6,7 +6,7 @@ master:
   driver: "ros2_canopen::MasterDriver"
   package: "canopen_master_driver"
   namespace: "/master_ns"
-  sync_period: 50000   # unit is us ; we slow down for test to 50ms
+  sync_period: 10000   # unit is us ; we slow down for test to 50ms
   boot_time: 10000   # ms ; over all boot time 
   boot_timeout: 1500   # ms ; boot time out 
 defaults:
@@ -24,7 +24,7 @@ defaults:
     - {index: 0x6040, sub_index: 0, value: 0x80} # Fault reset
     - {index: 0x6040, sub_index: 0, value: 0x06} # Fault reset
     - {index: 0x6040, sub_index: 0, value: 0x07} # Fault reset
-    - {index: 0x60C2, sub_index: 1, value: 50} # Set interpolation time for cyclic modes to 50 ms
+    - {index: 0x60C2, sub_index: 1, value: 10} # Set interpolation time for cyclic modes to 50 ms
     - {index: 0x60C2, sub_index: 2, value: -3} # Set base 10-3s
     - {index: 0x6081, sub_index: 0, value: 1000}  # profile velocity
     - {index: 0x6083, sub_index: 0, value: 2000}  # profile acceleration
