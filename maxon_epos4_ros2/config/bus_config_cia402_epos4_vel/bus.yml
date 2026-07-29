@@ -16,9 +16,9 @@ defaults:
   boot_timeout_ms: 3000
   heartbeat_producer: 2000   # [ms] heartbeat producer for all slaves 
   #switching_state: 2
-  scale_pos_from_dev: 0.0015339   # = 2π / 4096
+  scale_pos_from_dev: 0.0061359   # = 2π / 1024 (実機エンコーダ 256 pulses × 4 逓倍。SDO 0x3000:05 実測 2026-07-29) # claude
   scale_vel_from_dev: 0.10472     # = 2π / 60
-  scale_pos_to_dev:   651.9       # = 4096 / 2π
+  scale_pos_to_dev:   162.97      # = 1024 / 2π # claude
   scale_vel_to_dev:   9.5493      # = 60 / 2π
   sdo:
     - {index: 0x6040, sub_index: 0, value: 0x80} # Fault reset
